@@ -60,6 +60,14 @@ const elements = {
   ticketTotalPaid: document.getElementById('ticket-total-paid')
 };
 
+function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    minimumFractionDigits: 2
+  }).format(Number(amount) || 0);
+}
+
 // ==============================================================================
 // 1. INITIALIZATION
 // ==============================================================================
@@ -197,7 +205,7 @@ function selectTable(table) {
   elements.cardTableCapacity.textContent = `${table.capacity} Guests`;
   elements.cardTableZone.textContent = table.zone;
   elements.cardTableChampagne.textContent = table.champagne;
-  elements.cardTablePrice.textContent = `$${table.price.toLocaleString()}`;
+  elements.cardTablePrice.textContent = formatCurrency(table.price);
 
   // Update visual selection in grid
   document.querySelectorAll('.dining-table').forEach(el => {
@@ -218,7 +226,7 @@ function openCheckoutModal() {
   elements.summaryTierName.textContent = state.selectedTier.name;
   elements.summaryTableNumber.textContent = `Table #${table.number} (${table.zone})`;
   elements.summaryGuestCount.textContent = `${table.capacity} Guests`;
-  elements.summaryTotalPrice.textContent = `$${table.price.toLocaleString()}.00`;
+  elements.summaryTotalPrice.textContent = formatCurrency(table.price);
 
   elements.checkoutModal.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -296,7 +304,7 @@ function showConfirmationTicket(booking) {
   elements.ticketBookingRef.textContent = booking.bookingRef;
   elements.ticketTableName.textContent = `Table #${booking.tableNumber}`;
   elements.ticketPartySize.textContent = `${booking.guestCount} Guests`;
-  elements.ticketTotalPaid.textContent = `$${booking.totalAmount.toLocaleString()}.00`;
+  elements.ticketTotalPaid.textContent = formatCurrency(booking.totalAmount);
 
   elements.confirmationModal.classList.add('active');
   document.body.style.overflow = 'hidden';

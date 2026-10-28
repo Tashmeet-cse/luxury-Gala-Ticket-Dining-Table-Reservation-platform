@@ -137,7 +137,7 @@ async function sendBookingConfirmationEmail(booking) {
         <p>Hello ${booking.primaryGuest.firstName},</p>
         <p>Your table reservation for ${booking.tableNumber} is confirmed.</p>
         <p><strong>Booking reference:</strong> ${booking.bookingRef}</p>
-        <p><strong>Total amount:</strong> $${booking.totalAmount}</p>
+        <p><strong>Total amount:</strong> ₹${Number(booking.totalAmount).toLocaleString('en-IN')}</p>
       `
     });
 
@@ -339,7 +339,7 @@ app.post('/api/bookings/reserve', asyncHandler(async (req, res) => {
 
   const emailResult = await sendBookingConfirmationEmail(newBooking);
 
-  console.log(`✅ [New Booking] Ref: ${newBooking.bookingRef} | Table: #${newBooking.tableNumber} | Total: $${newBooking.totalAmount}`);
+  console.log(`✅ [New Booking] Ref: ${newBooking.bookingRef} | Table: #${newBooking.tableNumber} | Total: ₹${Number(newBooking.totalAmount).toLocaleString('en-IN')}`);
 
   res.status(201).json({
     success: true,
@@ -398,7 +398,7 @@ app.get('/api/admin/bookings', requireAdmin, asyncHandler(async (req, res) => {
 }));
 
 app.post('/api/payments/create-intent', async (req, res) => {
-  const { amount, bookingRef, currency = 'usd' } = req.body || {};
+  const { amount, bookingRef, currency = 'inr' } = req.body || {};
 
   if (process.env.NODE_ENV === 'production') {
     return res.status(503).json({

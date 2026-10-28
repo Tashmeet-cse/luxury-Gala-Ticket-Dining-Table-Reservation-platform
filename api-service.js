@@ -15,7 +15,7 @@ const API_CONFIG = {
   USE_MOCK_BACKEND: false,
 
   // Backend server endpoint
-  API_BASE_URL: window.GALA_API_BASE_URL || 'http://localhost:5000/api',
+  API_BASE_URL: window.GALA_API_BASE_URL || 'https://lpu-gala-reservation-api.onrender.com/api',
 
   // Request timeout in milliseconds
   TIMEOUT_MS: 8000

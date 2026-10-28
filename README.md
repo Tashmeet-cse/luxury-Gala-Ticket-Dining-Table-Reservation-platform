@@ -28,7 +28,7 @@ Serve the site through a local web server on port 5500 so it is allowed by the d
 3. In `api-service.js`, replace the localhost fallback in `API_BASE_URL` with `https://YOUR-API.onrender.com/api`, then publish the updated site through GitHub Pages.
 4. In Render's environment settings, verify `FRONTEND_ORIGIN` exactly matches the GitHub Pages origin. Render generates `ADMIN_API_TOKEN`; keep it private.
 
-The database starts with the 16 tables available and no old local bookings. Reservation amounts and table details are taken from the server database, not trusted from the browser. The admin endpoint requires the token:
+The database starts with the 16 tables available and no old local bookings. Prices are displayed and treated as Indian rupees (INR). Reservation amounts and table details are taken from the server database, not trusted from the browser. The admin endpoint requires the token:
 
 ```powershell
 curl.exe -H "Authorization: Bearer YOUR_ADMIN_API_TOKEN" https://YOUR-API.onrender.com/api/admin/bookings
