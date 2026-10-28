@@ -1,11 +1,11 @@
 {
   "name": "nye-gala-backend",
   "version": "1.0.0",
-  "description": "Production-ready backend API for L'Étoile New Year's Eve Gala Ticket & Dining Table Reservation",
+  "description": "Static site with the reservation API in backend/",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -4,13 +4,9 @@
  * ==============================================================================
  * 
  * HOW THIS WORKS:
- * 1. By default, `USE_MOCK_BACKEND = true`. The website is 100% functional 
- *    immediately with instant simulated responses (saving to localStorage).
+ * 1. Set `USE_MOCK_BACKEND = true` only for local mock testing.
  * 
- * 2. When you want to connect your real backend (Node.js/Express, Python, Go, etc.):
- *    - Change `USE_MOCK_BACKEND` to `false`
- *    - Set `API_BASE_URL` to your server URL (e.g. 'http://localhost:5000/api')
- *    - That's it! All UI components will seamlessly talk to your real API.
+ * 2. Set `GALA_API_BASE_URL` to the deployed API URL before publishing the site.
  * ==============================================================================
  */
 
@@ -19,7 +15,7 @@ const API_CONFIG = {
   USE_MOCK_BACKEND: false,
 
   // Backend server endpoint
-  API_BASE_URL: 'http://localhost:5000/api',
+  API_BASE_URL: window.GALA_API_BASE_URL || 'http://localhost:5000/api',
 
   // Request timeout in milliseconds
   TIMEOUT_MS: 8000
@@ -83,8 +79,7 @@ class GalaApiService {
       return await response.json();
     } catch (error) {
       console.error('❌ [API Service] Failed to fetch tables from backend:', error);
-      console.warn('⚠️ Falling back to local mock data.');
-      return { success: true, tables: JSON.parse(localStorage.getItem('gala_tables') || '[]') };
+      throw error;
     }
   }
 
