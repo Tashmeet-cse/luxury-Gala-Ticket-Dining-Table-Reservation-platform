@@ -15,10 +15,10 @@
  */
 
 const API_CONFIG = {
-  // Set to FALSE once you run your backend server!
-  USE_MOCK_BACKEND: true,
+  // Backend is now enabled. Set to true only for local mock testing.
+  USE_MOCK_BACKEND: false,
 
-  // Change this to your live server endpoint or localhost port
+  // Backend server endpoint
   API_BASE_URL: 'http://localhost:5000/api',
 
   // Request timeout in milliseconds

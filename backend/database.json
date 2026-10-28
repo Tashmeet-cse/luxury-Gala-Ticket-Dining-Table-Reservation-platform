@@ -1,0 +1,271 @@
+{
+  "tables": [
+    {
+      "id": "T01",
+      "number": 1,
+      "capacity": 2,
+      "tier": "Grand Seated",
+      "zone": "Balcony Promenade",
+      "price": 1160,
+      "status": "reserved",
+      "champagne": "1x Dom Pérignon Brut"
+    },
+    {
+      "id": "T02",
+      "number": 2,
+      "capacity": 2,
+      "tier": "Grand Seated",
+      "zone": "Balcony Promenade",
+      "price": 1160,
+      "status": "reserved",
+      "champagne": "1x Dom Pérignon Brut"
+    },
+    {
+      "id": "T03",
+      "number": 3,
+      "capacity": 4,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 2320,
+      "status": "reserved",
+      "champagne": "2x Dom Pérignon Brut"
+    },
+    {
+      "id": "T04",
+      "number": 4,
+      "capacity": 4,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 2320,
+      "status": "reserved",
+      "champagne": "2x Dom Pérignon Brut"
+    },
+    {
+      "id": "T05",
+      "number": 5,
+      "capacity": 6,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 3480,
+      "status": "reserved",
+      "champagne": "3x Dom Pérignon Brut"
+    },
+    {
+      "id": "T06",
+      "number": 6,
+      "capacity": 6,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 3480,
+      "status": "reserved",
+      "champagne": "3x Dom Pérignon Brut"
+    },
+    {
+      "id": "T07",
+      "number": 7,
+      "capacity": 4,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 2320,
+      "status": "available",
+      "champagne": "2x Dom Pérignon Brut"
+    },
+    {
+      "id": "T08",
+      "number": 8,
+      "capacity": 4,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 2320,
+      "status": "available",
+      "champagne": "2x Dom Pérignon Brut"
+    },
+    {
+      "id": "T09",
+      "number": 9,
+      "capacity": 8,
+      "tier": "Imperial VIP",
+      "zone": "Front Stage Salon",
+      "price": 9900,
+      "status": "available",
+      "champagne": "Vintage 2013 Unlimited"
+    },
+    {
+      "id": "T10",
+      "number": 10,
+      "capacity": 8,
+      "tier": "Imperial VIP",
+      "zone": "Front Stage Salon",
+      "price": 9900,
+      "status": "available",
+      "champagne": "Vintage 2013 Unlimited"
+    },
+    {
+      "id": "T11",
+      "number": 11,
+      "capacity": 8,
+      "tier": "Imperial VIP",
+      "zone": "Front Stage Salon",
+      "price": 9900,
+      "status": "reserved",
+      "champagne": "Vintage 2013 Unlimited"
+    },
+    {
+      "id": "T12",
+      "number": 12,
+      "capacity": 4,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom Ring",
+      "price": 2400,
+      "status": "reserved",
+      "champagne": "2x Dom Pérignon Brut"
+    },
+    {
+      "id": "T13",
+      "number": 13,
+      "capacity": 2,
+      "tier": "Grand Seated",
+      "zone": "Mezzanine Terrace",
+      "price": 1160,
+      "status": "available",
+      "champagne": "1x Dom Pérignon Brut"
+    },
+    {
+      "id": "T14",
+      "number": 14,
+      "capacity": 2,
+      "tier": "Grand Seated",
+      "zone": "Mezzanine Terrace",
+      "price": 1160,
+      "status": "reserved",
+      "champagne": "1x Dom Pérignon Brut"
+    },
+    {
+      "id": "T15",
+      "number": 15,
+      "capacity": 6,
+      "tier": "Grand Seated",
+      "zone": "Center Ballroom",
+      "price": 3480,
+      "status": "available",
+      "champagne": "3x Dom Pérignon Brut"
+    },
+    {
+      "id": "T16",
+      "number": 16,
+      "capacity": 8,
+      "tier": "Imperial VIP",
+      "zone": "Private Royal Box",
+      "price": 10500,
+      "status": "available",
+      "champagne": "Vintage 2013 Unlimited"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "book_1793164243233",
+      "bookingRef": "NYE-5098-VIP",
+      "createdAt": "2026-10-28T05:10:43.233Z",
+      "status": "CONFIRMED",
+      "tableId": "T02",
+      "tableNumber": 2,
+      "tier": "grand",
+      "tierName": "Grand Ballroom Dining",
+      "guestCount": 2,
+      "primaryGuest": {
+        "firstName": "Meet",
+        "lastName": "Arora",
+        "email": "meetarora5132@gmail.com",
+        "phone": "9906853522"
+      },
+      "dietaryNotes": "fxg",
+      "specialRequests": "None",
+      "totalAmount": 1160,
+      "paymentStatus": "PAID_MOCK"
+    },
+    {
+      "id": "book_1793164278791",
+      "bookingRef": "NYE-7696-VIP",
+      "createdAt": "2026-10-28T05:11:18.791Z",
+      "status": "CONFIRMED",
+      "tableId": "T12",
+      "tableNumber": 12,
+      "tier": "grand",
+      "tierName": "Grand Ballroom Dining",
+      "guestCount": 4,
+      "primaryGuest": {
+        "email": "john@example.com",
+        "firstName": "John",
+        "phone": "+1-555-123-4567",
+        "lastName": "Doe"
+      },
+      "dietaryNotes": "None",
+      "specialRequests": "Window table",
+      "totalAmount": 2400,
+      "paymentStatus": "PAID_MOCK"
+    },
+    {
+      "id": "book_1793164559837",
+      "bookingRef": "NYE-3255-VIP",
+      "createdAt": "2026-10-28T05:15:59.837Z",
+      "status": "CONFIRMED",
+      "tableId": "T04",
+      "tableNumber": 4,
+      "tier": "grand",
+      "tierName": "Grand Ballroom Dining",
+      "guestCount": 4,
+      "primaryGuest": {
+        "email": "ava@example.com",
+        "firstName": "Ava",
+        "phone": "+1-555-010-2020",
+        "lastName": "Johnson"
+      },
+      "dietaryNotes": "Vegetarian",
+      "specialRequests": "Near the stage",
+      "totalAmount": 2320,
+      "paymentStatus": "PAID_MOCK"
+    },
+    {
+      "id": "book_1793165329541",
+      "bookingRef": "NYE-9086-VIP",
+      "createdAt": "2026-10-28T05:28:49.541Z",
+      "status": "CONFIRMED",
+      "tableId": "T01",
+      "tableNumber": 1,
+      "tier": "grand",
+      "tierName": "Grand Ballroom Dining",
+      "guestCount": 2,
+      "primaryGuest": {
+        "firstName": "Front",
+        "lastName": "Tester",
+        "email": "fronttester@example.com",
+        "phone": "+1-555-000-0101"
+      },
+      "dietaryNotes": "No nuts",
+      "specialRequests": "Window table request",
+      "totalAmount": 1160,
+      "paymentStatus": "PAID_MOCK"
+    },
+    {
+      "id": "book_1793165569673",
+      "bookingRef": "NYE-8324-VIP",
+      "createdAt": "2026-10-28T05:32:49.673Z",
+      "status": "CONFIRMED",
+      "tableId": "T05",
+      "tableNumber": 5,
+      "tier": "grand",
+      "tierName": "Grand Ballroom Dining",
+      "guestCount": 6,
+      "primaryGuest": {
+        "email": "harshitatashmeet@gmail.com",
+        "firstName": "Final",
+        "phone": "+1-555-777-1234",
+        "lastName": "Presenter"
+      },
+      "dietaryNotes": "No restrictions",
+      "specialRequests": "Presentation demo",
+      "totalAmount": 3480,
+      "paymentStatus": "PAID_MOCK"
+    }
+  ]
+}
