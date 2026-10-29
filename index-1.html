@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'ÉTOILE • New Year's Eve Gala 2027 | Tickets & Table Reservations</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Gold Dust Particle Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Gala notice">
+    <div class="announcement-content">
+      <span class="badge-gold">LIMITED CAPACITY</span>
+      <span>Formal Evening Attire • Lovely Professional University, Punjab</span>
+      <span class="sep">•</span>
+      <span class="seats-alert" id="seats-left-counter">Only 14 Dining Tables Remaining</span>
+    </div>
+  </aside>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="brand-sub">THE ANNUAL ROYAL SOIRÉE</span>
+        <span class="brand-title">L’ÉTOILE <span>NYE</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#experience">The Experience</a>
+        <a href="#floorplan">Floor Plan & Tables</a>
+        <a href="#tiers">Tickets & Tiers</a>
+        <a href="#menu">Michelin Menu</a>
+        <a href="#concierge">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#floorplan" class="btn btn-gold btn-sm">Reserve Table</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-tag">December 31, 2026 • 8:00 PM – Dawn</div>
+        <h1 class="hero-title">
+          Celebrate New Year's Eve at <br>
+          <span class="gold-gradient-text">L'Étoile Gala</span>
+        </h1>
+        <p class="hero-subtitle">
+          Join us for an evening of dinner, music and celebration as we welcome the New Year together at Lovely Professional University.
+        </p>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-container" id="countdown-timer">
+          <div class="timer-segment">
+            <span class="timer-val" id="timer-days">00</span>
+            <span class="timer-label">DAYS</span>
+          </div>
+          <span class="timer-divider">:</span>
+          <div class="timer-segment">
+            <span class="timer-val" id="timer-hours">00</span>
+            <span class="timer-label">HOURS</span>
+          </div>
+          <span class="timer-divider">:</span>
+          <div class="timer-segment">
+            <span class="timer-val" id="timer-mins">00</span>
+            <span class="timer-label">MINUTES</span>
+          </div>
+          <span class="timer-divider">:</span>
+          <div class="timer-segment">
+            <span class="timer-val" id="timer-secs">00</span>
+            <span class="timer-label">SECONDS</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#floorplan" class="btn btn-gold btn-lg">
+            <span>Select Dining Table</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#tiers" class="btn btn-outline btn-lg">Explore Ticket Tiers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Highlights Bar -->
+    <section class="highlights-section" id="experience">
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon">🍷</div>
+          <h3>5-Course Michelin Dining</h3>
+          <p>Curated by 3-Star Michelin Chef Alexandre Laurent, with sommelier grand cru pairings.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🎻</div>
+          <h3>Live Symphony & Jazz Band</h3>
+          <p>A full 24-piece orchestra transitioning into world-class modern lounge and soul at midnight.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🥂</div>
+          <h3>Dom Pérignon Midnight Toast</h3>
+          <p>Free-flowing vintage champagne service and rooftop balcony access for the midnight fireworks.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🎩</div>
+          <h3>Dedicated VIP Butler Service</h3>
+          <p>Every table tier features white-glove table service, coat check, and private valet entrance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Table Reservation & Floor Plan Section -->
+    <section class="floorplan-section" id="floorplan">
+      <div class="section-header">
+        <span class="section-tag">Interactive Seating</span>
+        <h2 class="section-title">Dining Table Layout</h2>
+        <p class="section-subtitle">
+          Choose an available table to check its seating capacity, view the details and continue with your reservation.
+        </p>
+      </div>
+
+      <div class="floorplan-wrapper">
+        <!-- Floor plan filters & legend -->
+        <div class="floorplan-controls">
+          <div class="legend-list">
+            <div class="legend-item"><span class="legend-dot available"></span> Available</div>
+            <div class="legend-item"><span class="legend-dot selected"></span> Selected</div>
+            <div class="legend-item"><span class="legend-dot reserved"></span> Reserved</div>
+            <div class="legend-item"><span class="legend-dot vip"></span> Presidential VIP</div>
+          </div>
+
+          <div class="filter-group">
+            <label for="capacity-filter">Filter by Table Size:</label>
+            <select id="capacity-filter" class="custom-select">
+              <option value="all">All Sizes (2 - 10 Guests)</option>
+              <option value="2">Couples Table (2 Guests)</option>
+              <option value="4">Intimate Table (4 Guests)</option>
+              <option value="6">Grand Table (6 Guests)</option>
+              <option value="8">Presidential Booth (8-10 Guests)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="floorplan-interactive-container">
+          <!-- The Visual Ballroom Map -->
+          <div class="ballroom-map" id="ballroom-map">
+            <div class="stage-banner">
+              <div class="stage-glow"></div>
+              <span>★ MAIN STAGE & SYMPHONY ORCHESTRA ★</span>
+            </div>
+
+            <!-- Dance Floor -->
+            <div class="dance-floor">
+              <span>Grand Marble Dance Floor</span>
+            </div>
+
+            <!-- Tables Grid Container -->
+            <div class="tables-grid" id="tables-grid">
+              <!-- Dynamically rendered by app.js -->
+            </div>
+
+            <div class="entrance-banner">
+              <span>▼ Grand Chandelier Entrance & Red Carpet ▼</span>
+            </div>
+          </div>
+
+          <!-- Table Details / Live Booking Card -->
+          <div class="table-info-card" id="table-info-card">
+            <div class="card-inner">
+              <div class="table-info-header">
+                <span class="badge-gold" id="card-table-tier">VIP FRONT ROW</span>
+                <h3 id="card-table-name">Table #12</h3>
+                <span class="table-status-pill available" id="card-table-status">Available</span>
+              </div>
+
+              <div class="table-details-list">
+                <div class="detail-row">
+                  <span class="detail-label">Seating Capacity</span>
+                  <span class="detail-value" id="card-table-capacity">4 Guests</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value" id="card-table-zone">Stage-side Center Tier</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Included Champagne</span>
+                  <span class="detail-value" id="card-table-champagne">2x Vintage Dom Pérignon</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Dining Course</span>
+                  <span class="detail-value">5-Course Gala Tasting Menu</span>
+                </div>
+                <div class="detail-row price-row">
+                  <span class="detail-label">Total Reservation Price</span>
+                  <span class="detail-price" id="card-table-price">$2,400</span>
+                </div>
+              </div>
+
+              <div class="table-action">
+                <button class="btn btn-gold btn-block" id="btn-reserve-selected-table">
+                  <span>Confirm Table & Enter Guest Details</span>
+                </button>
+                <p class="table-guarantee-note">🔒 Table is locked for 10 minutes once checkout begins.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ticket Tiers Section -->
+    <section class="tiers-section" id="tiers">
+      <div class="section-header">
+        <span class="section-tag">Access Packages</span>
+        <h2 class="section-title">Gala Admission & Packages</h2>
+        <p class="section-subtitle">
+          Whether you desire general lounge admission or an all-inclusive VIP dining salon, choose your experience.
+        </p>
+      </div>
+
+      <div class="tiers-grid">
+        <!-- Tier 1 -->
+        <div class="tier-card" data-tier="starlight">
+          <div class="tier-header">
+            <span class="tier-type">COCKTAIL & LOUNGE</span>
+            <h3 class="tier-name">Starlight Soirée</h3>
+            <div class="tier-price">
+              <span class="currency">$</span>
+              <span class="amount">275</span>
+              <span class="period">/ guest</span>
+            </div>
+          </div>
+          <ul class="tier-perks">
+            <li>✓ Admission starting at 9:30 PM</li>
+            <li>✓ Open Top-Shelf Cocktail & Champagne Bar</li>
+            <li>✓ Hors d’oeuvres & Caviar Canapés</li>
+            <li>✓ Midnight Champagne Toast</li>
+            <li>✓ Access to Rooftop Fireworks Terrace</li>
+            <li class="disabled">✕ Seated Dining Table not included</li>
+          </ul>
+          <button class="btn btn-outline btn-block select-tier-btn" data-tier="starlight" data-price="275">
+            Book Lounge Ticket
+          </button>
+        </div>
+
+        <!-- Tier 2 (Featured) -->
+        <div class="tier-card featured" data-tier="grand">
+          <div class="popular-ribbon">MOST POPULAR</div>
+          <div class="tier-header">
+            <span class="tier-type">SEATED DINING</span>
+            <h3 class="tier-name">Grand Ballroom Table</h3>
+            <div class="tier-price">
+              <span class="currency">$</span>
+              <span class="amount">580</span>
+              <span class="period">/ guest</span>
+            </div>
+          </div>
+          <ul class="tier-perks">
+            <li>✓ Full Gala Entry from 8:00 PM</li>
+            <li>✓ Reserved Ballroom Dining Table</li>
+            <li>✓ 5-Course Michelin Tasting Dinner</li>
+            <li>✓ Premium Sommelier Wine Pairing</li>
+            <li>✓ Midnight Dom Pérignon Toast</li>
+            <li>✓ Dedicated Table Waitstaff</li>
+          </ul>
+          <button class="btn btn-gold btn-block select-tier-btn" data-tier="grand" data-price="580">
+            Select Dining Table
+          </button>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="tier-card" data-tier="imperial">
+          <div class="tier-header">
+            <span class="tier-type">ULTRA-VIP EXPERIENCE</span>
+            <h3 class="tier-name">The Imperial Salon</h3>
+            <div class="tier-price">
+              <span class="currency">$</span>
+              <span class="amount">1,250</span>
+              <span class="period">/ guest</span>
+            </div>
+          </div>
+          <ul class="tier-perks">
+            <li>✓ All-Access Black-Tie VIP Pass (7:30 PM)</li>
+            <li>✓ Front-Row Stage-Side Private Table</li>
+            <li>✓ Beluga Caviar & Wagyu A5 Service</li>
+            <li>✓ Unlimited Vintage 2013 Dom Pérignon</li>
+            <li>✓ Private Dedicated Butler & Sommelier</li>
+            <li>✓ Chauffeured Luxury Car Service Home</li>
+          </ul>
+          <button class="btn btn-outline btn-block select-tier-btn" data-tier="imperial" data-price="1250">
+            Reserve Imperial Tier
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gourmet Michelin Menu Preview -->
+    <section class="menu-section" id="menu">
+      <div class="section-header">
+        <span class="section-tag">Gastronomy</span>
+        <h2 class="section-title">New Year's Eve Menu</h2>
+        <p class="section-subtitle">Explore the five-course menu planned for the evening.</p>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-courses">
+          <div class="course-item">
+            <span class="course-number">COURSE I</span>
+            <h4>Imperial Osetra Caviar & Hokkaido Scallop</h4>
+            <p>Smoked crème fraîche, crisp brioche wafer, Meyer lemon gelée.</p>
+            <span class="wine-pairing">Pairing: Dom Pérignon Brut Vintage</span>
+          </div>
+
+          <div class="course-item">
+            <span class="course-number">COURSE II</span>
+            <h4>Perigord Black Truffle Risotto</h4>
+            <p>Carnaroli aged rice, 36-month Parmigiano-Reggiano emulsion, shaved winter truffles.</p>
+            <span class="wine-pairing">Pairing: Meursault Premier Cru 2020</span>
+          </div>
+
+          <div class="course-item">
+            <span class="course-number">COURSE III</span>
+            <h4>Butter-Poached Brittany Blue Lobster</h4>
+            <p>Sunchoke velouté, coral oil, sea asparagus, champagne reduction.</p>
+            <span class="wine-pairing">Pairing: Puligny-Montrachet 2021</span>
+          </div>
+
+          <div class="course-item">
+            <span class="course-number">COURSE IV</span>
+            <h4>Japanese Wagyu A5 Tenderloin</h4>
+            <p>Parsnip silk, glazed morels, bone marrow jus infused with 25-year aged balsamic.</p>
+            <span class="wine-pairing">Pairing: Château Margaux Grand Cru Classé</span>
+          </div>
+
+          <div class="course-item">
+            <span class="course-number">COURSE V</span>
+            <h4>Midnight Golden Clock Sphere</h4>
+            <p>Valrhona Grand Cru dark chocolate, hazelnut praline crisp, gold leaf, flaming Grand Marnier.</p>
+            <span class="wine-pairing">Pairing: Château d'Yquem Sauternes</span>
+          </div>
+        </div>
+        <p class="menu-dietary-notice">
+          Vegetarian, vegan, gluten-free, and kosher-certified menus are gladly accommodated upon booking.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ & Concierge Section -->
+    <section class="faq-section" id="concierge">
+      <div class="section-header">
+        <span class="section-tag">Concierge</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-container">
+        <details class="faq-item">
+          <summary>What is the official Gala dress code?</summary>
+          <div class="faq-answer">
+            Formal or smart evening wear is recommended. Please avoid sportswear and overly casual clothing.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can our party select dietary restrictions or allergies?</summary>
+          <div class="faq-answer">
+            Yes. During checkout, you can specify individual dietary requirements, kosher/halal preferences, and allergies for every guest at your table.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the cancellation and refund policy?</summary>
+          <div class="faq-answer">
+            For this project demonstration, please contact the event team to confirm cancellation, refund or transfer arrangements.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does the table hold and reservation work?</summary>
+          <div class="faq-answer">
+            When you select a table on the floor plan and initiate booking, that table is temporarily locked for 10 minutes to prevent double-booking while you complete your reservation details.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reservation Checkout Modal / Drawer -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-eyebrow">FINAL CONFIRMATION</span>
+        <h2 class="modal-title">Gala Reservation</h2>
+        <p class="modal-desc">Complete your guest details to receive your digital boarding passes.</p>
+      </div>
+
+      <form id="reservation-form" class="reservation-form">
+        <!-- Order Summary Box -->
+        <div class="order-summary-box">
+          <div class="summary-line">
+            <span class="summary-label">Selected Experience:</span>
+            <span class="summary-value" id="summary-tier-name">Grand Ballroom Dining</span>
+          </div>
+          <div class="summary-line">
+            <span class="summary-label">Table Number:</span>
+            <span class="summary-value" id="summary-table-number">Table #12 (4 Guests)</span>
+          </div>
+          <div class="summary-line">
+            <span class="summary-label">Guests:</span>
+            <span class="summary-value" id="summary-guest-count">4</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-line total-line">
+            <span class="summary-label">Total Amount:</span>
+            <span class="summary-value price-highlight" id="summary-total-price">$2,320.00</span>
+          </div>
+        </div>
+
+        <!-- Guest Details Form -->
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="primary-first-name">First Name *</label>
+            <input type="text" id="primary-first-name" required placeholder="Lord/Lady Alexander" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="primary-last-name">Last Name *</label>
+            <input type="text" id="primary-last-name" required placeholder="Vanderbilt" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="primary-email">Email Address (for tickets) *</label>
+            <input type="email" id="primary-email" required placeholder="alexander@domain.com" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="primary-phone">Mobile Phone (for SMS updates) *</label>
+            <input type="tel" id="primary-phone" required placeholder="+1 (555) 019-2834" class="form-input">
+          </div>
+          <div class="form-group full-width">
+            <label for="dietary-notes">Dietary Restrictions & Allergies</label>
+            <input type="text" id="dietary-notes" placeholder="e.g. 1x Pescatarian, 1x Nut allergy, 2x Standard" class="form-input">
+          </div>
+          <div class="form-group full-width">
+            <label for="special-requests">Special Requests / Celebrations</label>
+            <textarea id="special-requests" rows="2" placeholder="Anniversary celebration, specific champagne preference, valet notes..." class="form-textarea"></textarea>
+          </div>
+        </div>
+
+        <!-- Backend Notice for Developer/Owner -->
+        <div class="backend-banner">
+          <span class="backend-icon">⚡</span>
+          <div>
+            <strong>Developer Mode Active:</strong>
+            Submitting this triggers the modular API client (currently mock enabled). You can switch to your live Node.js/Python/Firebase backend in <code>api-service.js</code> with one line!
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-gold btn-block btn-lg" id="submit-booking-btn">
+            <span>Complete Reservation & Generate Ticket</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Digital Pass / Confirmation Modal -->
+  <div class="modal-backdrop" id="confirmation-modal">
+    <div class="modal-dialog ticket-dialog">
+      <button class="modal-close-btn" id="ticket-modal-close-btn">&times;</button>
+      
+      <div class="ticket-wrapper" id="ticket-element">
+        <div class="ticket-card-luxury">
+          <div class="ticket-header-strip">
+            <span class="ticket-brand">L'ÉTOILE • LPU</span>
+            <span class="ticket-class">VIP ADMISSION PASS</span>
+          </div>
+
+          <div class="ticket-body">
+            <div class="ticket-event-name">
+              <h3>2027 NEW YEAR'S EVE GALA</h3>
+              <p>Lovely Professional University • 8:00 PM</p>
+            </div>
+
+            <div class="ticket-grid">
+              <div class="ticket-meta">
+                <span class="lbl">Primary Guest</span>
+                <span class="val" id="ticket-guest-name">Alexander Vanderbilt</span>
+              </div>
+              <div class="ticket-meta">
+                <span class="lbl">Confirmation Code</span>
+                <span class="val gold" id="ticket-booking-ref">NYE-8924-VIP</span>
+              </div>
+              <div class="ticket-meta">
+                <span class="lbl">Assigned Table</span>
+                <span class="val" id="ticket-table-name">Table #12 (Front Row)</span>
+              </div>
+              <div class="ticket-meta">
+                <span class="lbl">Party Size</span>
+                <span class="val" id="ticket-party-size">4 Guests</span>
+              </div>
+              <div class="ticket-meta">
+                <span class="lbl">Dress Code</span>
+                <span class="val">Formal Evening Wear</span>
+              </div>
+              <div class="ticket-meta">
+                <span class="lbl">Total Paid</span>
+                <span class="val" id="ticket-total-paid">$2,320.00</span>
+              </div>
+            </div>
+
+            <div class="ticket-footer-strip">
+              <div class="qr-code-placeholder">
+                <div class="fake-qr" id="fake-qr"></div>
+                <span>SCAN AT ENTRY</span>
+              </div>
+              <div class="ticket-security-seal">
+                <div class="seal-icon">✦</div>
+                <span>VERIFIED RESERVATION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket-modal-actions">
+        <button class="btn btn-gold" onclick="window.print()">
+          <span>Print / Save as PDF</span>
+        </button>
+        <button class="btn btn-outline" id="btn-close-confirmation">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand-title">L’ÉTOILE <span>NYE</span></div>
+        <p>A New Year's Eve gathering with dinner, music and a place to celebrate with friends and family.</p>
+        <div class="concierge-line">
+          <strong>Concierge Desk:</strong> concierge@letoile-gala.com | +1 (212) 555-0199
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#experience">The Gala Experience</a></li>
+          <li><a href="#floorplan">Seating Floor Plan</a></li>
+          <li><a href="#tiers">Admission Packages</a></li>
+          <li><a href="#menu">Michelin Degustation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Event Details</h4>
+        <ul>
+          <li><strong>Venue:</strong> Lovely Professional University</li>
+          <li><strong>Address:</strong> Lovely Professional University, Phagwara, Punjab, India</li>
+          <li><strong>Doors Open:</strong> 8:00 PM IST</li>
+          <li><strong>Dress Code:</strong> Black Tie Strictly Enforced</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026–2027 L'Étoile Gala. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="api-service.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
