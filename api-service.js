@@ -25,7 +25,7 @@ const API_CONFIG = {
 const INITIAL_MOCK_TABLES = [
   { id: 'T01', number: 1, capacity: 2, tier: 'Grand Seated', zone: 'Balcony Promenade', price: 1160, status: 'available', champagne: '1x Dom Pérignon Brut' },
   { id: 'T02', number: 2, capacity: 2, tier: 'Grand Seated', zone: 'Balcony Promenade', price: 1160, status: 'available', champagne: '1x Dom Pérignon Brut' },
-  { id: 'T03', number: 3, capacity: 4, tier: 'Grand Seated', zone: 'Center Ballroom', price: 2320, status: 'reserved', champagne: '2x Dom Pérignon Brut' },
+  { id: 'T03', number: 3, capacity: 4, tier: 'Grand Seated', zone: 'Center Ballroom', price: 2320, status: 'available', champagne: '2x Dom Pérignon Brut' },
   { id: 'T04', number: 4, capacity: 4, tier: 'Grand Seated', zone: 'Center Ballroom', price: 2320, status: 'available', champagne: '2x Dom Pérignon Brut' },
   { id: 'T05', number: 5, capacity: 6, tier: 'Grand Seated', zone: 'Center Ballroom', price: 3480, status: 'available', champagne: '3x Dom Pérignon Brut' },
   { id: 'T06', number: 6, capacity: 6, tier: 'Grand Seated', zone: 'Center Ballroom', price: 3480, status: 'reserved', champagne: '3x Dom Pérignon Brut' },
